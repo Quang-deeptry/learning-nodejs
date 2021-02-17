@@ -1,0 +1,22 @@
+extends ../layouts/common 
+block content
+  h1 list product
+  p  #{user[0].email} - #{user[0]._id}
+  a(href="/products/create") new product 
+  table.table-bordered.col-md-6
+    thead
+      tr
+        th Firstname
+        th Lastname
+        th Email
+    tbody
+      each item in products 
+        tr
+          td=item.id
+          td=item.title
+          td
+            img(src=`/${item.image}`, width="40")
+          td 
+            a(href="/api/products/delete/" + item.id) delete
+          td 
+            a(href="/products/editer/" + item.id) editer

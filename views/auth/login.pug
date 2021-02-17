@@ -1,0 +1,13 @@
+extends ../layouts/common
+block content 
+  .col-md-5.mt-3
+    h1 login 
+    form(method='POST')
+      input.form-control(type='hidden', name="_csrf",value=csrfToken)
+      .form-group
+        label(for='email') Email address:
+        input#email.form-control(type='email', name="email", placeholder='Enter email')
+      .form-group
+        label(for='pwd') Password:
+        input#pwd.form-control(type='password', name="password" placeholder='Enter password')
+      button.btn.btn-primary(type='submit') Submit
